@@ -1,0 +1,30 @@
+{
+    // 使用 IntelliSense 以学习相关的 Node.js 调试属性。
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "启动程序",
+            "program": "${workspaceRoot}\\index.js"
+        },
+        {
+            "name": "Launch Chrome and new instance of Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000/",
+            "sourceMaps": true,
+            "webRoot": "E:/apache-tomcat-8.0.21/webapps/Test"
+        },
+        {
+            "name": "Attach to Chrome",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222,
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}"
+        }
+    ]
+}
