@@ -1,0 +1,136 @@
+.body{
+	font: 12px "lucida Grande",Verdana,"Microsoft YaHei";
+}
+
+.login{
+	width:306px;
+	padding-bottom:0px;
+	padding-bottom:0px;
+	min-height:289px;
+}
+
+.login{
+	position: relative;
+	overflow: hidden;
+}
+
+.login_form{
+	width:284px;
+	margin:0 auto;
+}
+
+.switch{
+	position: relative;
+	font-size: 16px;
+	height:46px;
+	font-family:"lucida Grande",Verdana,"Microsoft YaHei";
+	bottom:0px;
+}
+
+.uinArea{
+	height:50px;
+	position:relative;
+	z-index: 10;
+}
+
+.pwdArea{
+	height:50px;
+	position:relative;
+	z-index:3;
+}
+
+.input_tips{
+	top:12px;
+	*top:13px;
+	_top:13px;
+}
+
+.input_tips{
+	position:absolute;
+	left:13px;
+	+top:13px;
+	font-size:14px;
+	line-height:16px;
+	color:#aaa;
+	cursor:text;
+}
+
+.inputOuter{
+	background:none;
+	border:1px;
+	border-color:#black;
+	height: 38px;
+	width: 282px;
+	border-radius: 2px;
+}
+
+.inputstyle{
+	top:0px;
+	padding: 10px 40px 10px 10px;
+	left:0px;
+	border-radius: 3px;
+	width:232px;
+}
+
+.inputstyle{
+	position:relative;
+	height:18px;
+	line-height:18px;
+	background: 0 0;
+	color: #333;
+	font-family:Verdana,Tahoma,Arial;
+	font-size:16px;
+}
+
+.submit{
+	margin-top:23px;
+	height:177px;
+}
+
+.submit{
+	position:relative;
+}
+
+.login_button{
+	right:0px;
+	top:25px;
+	background-color:#5a98de;
+	outline:none;
+	border-radius:3px;
+}
+
+.login_button{
+	position:absolute;
+	left:0px;
+}
+
+a{
+	text-decoration:none;
+}
+
+.btn{
+	background:none;
+	height:40px;
+	line-height:39px;
+	width:100%;
+	outline:none;
+	font-weight:normal;
+	font-size:18px;
+	border:none;
+	color:#fff;
+	cursor:pointer;
+	font-family:inherit;
+}
+
+.bottom{
+	width:282px;
+	right:12px;
+	margin-bottom:15px;
+	bottom:2px;
+	height:16px;
+	position:absolute;
+	text-align:right;
+	font-size:12px;
+}
+
+

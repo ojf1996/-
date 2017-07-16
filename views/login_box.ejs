@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content = "text/html; charset = utf-8" />	
+	<link rel="stylesheet" type="text/css" href="http://localhost:3000/css/login_box.css">
+</head>
+<body>
+	<div class = "login" id = "login" style = "height:330 px; display: block;">
+		<div class = "login_form">
+			<form name = "loginform" style = "margin:0px">
+				<div class = "switch">
+					<input type = "radio" name = "type" value = "admin" checked/> 管理员
+					<input type = "radio" name = "type" value = "user" checked/>用户
+				</div>
+				<div class = "uinArea" id = "uinArea">
+					<label class = "input_tips" tabindex="1" id = "uin_tips" style = "display:block;" for="u">请输入用户名</label>
+					<div class = "inputOuter">
+						<input type = "text" name = "u" id = "u" class = "inputstyle" value=""/>
+					</div>
+				</div>
+				<div class = "pwdArea" id = "pwdArea">
+					<label class = "input_tips" tabindex="2" id = "pwd_tips" style = "display:block;" for="p">请输入密码</label>
+					<div class = "inputOuter">
+						<input type = "password" name = "p" class = "inputstyle" id = "p" maxlength = "16" value = ""/>
+					</div>
+				</div>
+				<div class = "submit">
+					<a class = "login_button" hidefocus = "true">
+						<input type = "submit" tabindex="6" class = "btn" value = "登录"/>
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class = "bottom" id = "buttom_web" style="display:block;">
+		<a class = "link" id = "register" href = "http://localhost:3000/register" target = "_blank">注册</a>
+	
+</body>
+</html>
