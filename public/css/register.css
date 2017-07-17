@@ -1,0 +1,87 @@
+.body{
+    font-family: "lucida Grande", Verdana, "Microsoft YaHei";
+    background-color: rgb(255,255,255);
+    font-size:20px;
+    margin: 0px;
+    display: block;
+}
+
+.header{
+    height: 62px;
+    zoom:1;
+    overflow: hidden;
+    border-bottom: 1px solid rgb(214,233,234);
+    background-color: #eff4fa;
+}
+
+.container{
+    width: 960px;
+    margin: 32px auto;
+    padding: 0px 24px;
+}
+
+.input{
+    top:20px;
+    left:280px;
+    height: 80px;
+    position: relative;
+    z-index: 10;
+}
+
+.inputform{
+    border: 1px solid blue;
+    height: 38px;
+    width:282px;
+    position:relative;
+    left:20px;
+}
+
+.verifycode{
+    top:20px;
+    left:280px;
+    height: 140px;
+    position: relative;
+    z-index: 10;
+}
+
+.botton{
+    left:280px;
+    top:0px;
+    width: 400px;
+    position: relative;
+    background-color: #fff;
+    outline: none;
+    border-radius: 3px;
+}
+
+.sbtn{
+    position: relative;
+    left:60px;
+    background-color: #5a98de;
+    height: 40px;
+    line-height: 39px;
+    width:100px;
+    font-weight:normal;
+    font-size: 18px;
+    border: none; 
+    color:#fff;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: center;
+}
+
+.rbtn{
+    position: relative;
+    left:90px;
+    background-color: #5a98de;
+    height: 40px;
+    line-height: 39px;
+    width:100px;
+    font-weight:normal;
+    font-size: 18px;
+    border: none; 
+    color:#fff;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: center;
+}

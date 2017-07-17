@@ -1,3 +1,4 @@
+const db = require('../lib/db.js');
 const mongoose = require('mongoose');
 
 const personSchema = new mongoose.Schema({
@@ -6,11 +7,7 @@ const personSchema = new mongoose.Schema({
 		type:Number //1：用户 2：管理员
 });
 
-const Person = mongoose.model('Person',personSchema);
-
-personSchema.statics.findByName = function(name,cb){
-	return this.find({ name: new RegExp(name,'i'),cb});
-};
+const Person = db.model('Person',personSchema);
 
 personSchema.index({userName:1});
 
