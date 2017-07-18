@@ -27,13 +27,22 @@
     position: relative;
     z-index: 10;
 }
+label{
+    top:20px;
+    position: relative;
+}
+img{
+    top:0px;
+    position:absolute;
+    left:400px;
+}
 
 .inputform{
     border: 1px solid blue;
     height: 38px;
     width:282px;
-    position:relative;
-    left:20px;
+    position:absolute;
+    left:100px;
 }
 
 .verifycode{
@@ -68,6 +77,7 @@
     cursor: pointer;
     font-family: inherit;
     text-align: center;
+    user-select:none;
 }
 
 .rbtn{

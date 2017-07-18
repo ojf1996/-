@@ -1,5 +1,4 @@
 var code = "";
-var passwd = "";
 var ok = false;
 var pok = false;
 var cok = false;
@@ -38,6 +37,7 @@ function verify(){
         document.getElementById("verifyCodeInput").value = "";
         return false;
     }
+    alert("验证码正确");
     return true;
 }
 
@@ -79,22 +79,21 @@ function checkUnique(){
         else{
             ok = true;
             $("#sts").attr("src","http://localhost:3000/image/yes.png");
-            $("#sts").show();
         }
+        $("#sts").show();
     });
 }
 
 function checkpasswd(){
     pok = false;
-    passwd = document.getElementById("passwd").value;
-    var length = passwd.length;
-    if(length <= 5){
+    var l = document.getElementById("pwd").value.length;
+    if(l<= 5){
         alert("密码至少为6位");
         $("#psts").attr("src","http://localhost:3000/image/no.jpg");
         $("#psts").show();
         return;
     }
-    else if(length > 20){
+    else if(l > 20){
         alert("密码至多为20位");
         $("#psts").attr("src","http://localhost:3000/image/no.jpg");
         $("#psts").show();
@@ -107,8 +106,9 @@ function checkpasswd(){
 
 function doublecheckpwd(){
     cok = false;
-    var pwd = document.getElementById('checkpwd').value;
-    if(pwd != passwd){
+    var pwd = document.getElementById('checkPwd').value;
+    var pwd_ = document.getElementById('pwd').value;
+    if(pwd != pwd_){
         $("#csts").attr("src","http://localhost:3000/image/no.jpg");
         $("#csts").show();
     }
@@ -123,8 +123,40 @@ function re(){
      $("#csts").hide();
      $("#psts").hide();
      $("#sts").hide();
-     document.getElementById('checkpwd').value = "";
+     document.getElementById('checkPwd').value = "";
      document.getElementById('passwd').value = "";
      document.getElementById('userName').value = "";
      generateCode();
 }
+
+function senddata(){
+    if(ok&&cok&&pok){
+        if(verify()){
+            var n = document.getElementById('userName');
+            var pwd = document.getElementById('pwd');
+            alert("发送数据");
+            $.post("http://localhost:3000/register/",
+            {
+                name:n,
+                password:pwd,
+                type:1
+            },
+            function(data,status){
+                alert("唤起");
+                if(status==200){
+                    document.write("注册成功，即将返回登陆页面");
+                    setTimeout(window.location.href="http://localhost:3000/",3); 
+                }
+                else{
+                    document.write("注册失败，即将刷新注册页面");
+                    setTimeout(window.location.href="http://localhost:3000/register",3); 
+                } 
+            });
+        }
+    }
+    else{
+        alert("请确定填写数据正确");
+    }
+}
+
+

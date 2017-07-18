@@ -5,44 +5,41 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
     <script src="http://localhost:3000/js/index.js"></script>
 </head>
-
 <body>
     <div class = "header">
     </div>
     <div class = "container">
-        <form>
+        <form id = "myForm" autocomplete="off"> 
             <div id = "user_name" class = "input">
-                * 用户名：<input class="inputform" name = "userName" id = "userName" type = "text" onchange="checkUnique();" ></input>
-                <img id = "sts" height="40" width = "40" style="top:10px; position:relative;left:50px;"></img>
+                * 用户名：<input class="inputform" name = "userName" id = "userName" type = "text" onchange="checkUnique();" autocomplete="off"/>
+                <img id = "sts" height="40" width = "40"/>
                 <br/>
-                <label style="top:20px;">请输入5-20个以字母开头、可带数字、“_”、“.”的字符串</label>
+                <label>请输入5-20个以字母开头、可带数字、“_”、“.”的字符串</label>
             </div>
             <div id = "passwd" class = "input">
-                * 密码：<input class="inputform" name = "passwd" id = "passwd" type = "password"></input>
-                <img id = "psts" height="40" width = "40" style="top:10px; position:relative;left:50px;"></img>
+                * 密码：<input class="inputform" name = "passwd" id = "pwd" type = "password" onchange="checkpasswd();" autocomplete="off"/>
+                <img id = "psts" height="40" width = "40"/>
                 <br/>
                 <label>密码由6-20位字符组成，区分大小写</label>
             </div>
             <div id = "checkPasswd" class = "input">
-                * 密码确认<input class="inputform" name = "checkPwd" id = "checkPwd" type = "password"></input>
-                <img id = "csts" height="40" width = "40" style="top:10px; position:relative;left:50px;"></img>
+                * 密码确认<input class="inputform" name = "checkPwd" id = "checkPwd" type = "password" onchange="doublecheckpwd();" autocomplete="off"/>
+                <img id = "csts" height="40" width = "40"/>
                 <br/>
                 <label>请仔细确认密码</label>
             </div>
             <div class = "verifycode" id = "verify">
-                * 验证码<input class="inputform" type = "text" id = "verifyCodeInput">
-                <canvas id="myCanvas" width="60" height="30" style="top:10px; border:1px solid #d3d3d3;position:relative;left:20px;"></canvas>
+                * 验证码<input class="inputform" type = "text" id = "verifyCodeInput"/>
+                <canvas id="myCanvas" width="60" height="40" style="top:0px; border:1px solid #d3d3d3;position:relative;left:350px;"></canvas>
                 <br/>
                 <label>请填写图片中验证码，不区分大小写</label>
-                <label style="text-decoration:underline;user-select:none;" onclick="generateCode();" onselectstart="return false;">看不清楚，换一张图</label>
+                <label style="text-decoration:underline;" onclick="generateCode();" onselectstart="return false;">看不清楚，换一张图</label>
             </div>
             <div class="botton">
-                <input class = "sbtn" id = "submit" type="submit" value="登录"/>
-                <input class = "rbtn" id = "reset" type="botton" value = "重置"/>
+                <input class = "sbtn" id = "submit" type="botton" value="登录" onclick="senddata();"/>
+                <input class = "rbtn" id = "reset" type="botton" value = "重置" onclick="re();" onselectstart="return false; autocomplete="off"/>
             </div>
         </form>
     </div>
-
-
 </body>
 </html>
