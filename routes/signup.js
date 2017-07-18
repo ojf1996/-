@@ -20,7 +20,7 @@ router.get("/checkUnique/:name",function(req,res,next){
 	});	
 });
 
-router.post("/signup/",function(req,res,next){
+router.post("/",function(req,res,next){
 	console.log("收到了什么");
 	res.sendStatus(200).end();
 });
