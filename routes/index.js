@@ -1,35 +1,8 @@
-module.exports = function(app){
-	app.get("/",function(req,res,next){
-		res.render("login_in",{});
-	});
-	app.use("image/:file",function(req,res,next){
-		var options = {
-    		root: __dirname + "/public/image",
-    		dotfiles: "deny",
-    		headers: {
-        		"x-timestamp": Date.now(),
-        		"x-sent": true
-    			}
-  			};
+var Login = require("./Login");
 
-  		var fileName = req.params.file;
-  		res.sendFile(fileName, options, function (err) {
-    		if (err) {
-      			console.log(err);
-      			res.status(err.status).end();
-    		}
-    		else {
-      			console.log("Sent:", fileName);
-    		}
-  		});
-	});
-
-	app.get("/views/login_box",function(req,res,next){
-		res.render("login_box",{});
-	});
-	
-	app.use("/register",require("./signup"));
-	
+module.exports =  function(app){
+	app.use("/Login",Login);
+	app.use("/Data",Data);
 	
 	//404
 	app.use(function(req, res, next) {
@@ -48,5 +21,4 @@ module.exports = function(app){
 		res.status(err.status || 500);
 		res.render("error");
 	});
-};
-
+}

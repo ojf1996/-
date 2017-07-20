@@ -72,7 +72,7 @@ function checkUnique(){
             return;
         }
     }
-    $.get("http://localhost:3000/register/checkUnique/"+uName,function(data,status){
+    $.get("http://localhost:3000/Login/checkUnique/"+uName,function(data,status){
         if(data =="no"){
             $("#sts").attr("src","http://localhost:3000/image/no.jpg");
         }
@@ -132,25 +132,17 @@ function re(){
 function senddata(){
     if(ok&&cok&&pok){
         if(verify()){
-            var n = document.getElementById('userName');
-            var pwd = document.getElementById('pwd');
-            alert("发送数据");
-            $.post("http://localhost:3000/register/",
+            var n = document.getElementById('userName').value;
+            var pwd = document.getElementById('pwd').value;
+            alert("发送数据"); 
+            $.post("http://localhost:3000/Login/signup",
             {
                 name:n,
                 password:pwd,
                 type:1
             },
             function(data,status){
-                alert("唤起");
-                if(status==200){
-                    document.write("注册成功，即将返回登陆页面");
-                    setTimeout(window.location.href="http://localhost:3000/",3); 
-                }
-                else{
-                    document.write("注册失败，即将刷新注册页面");
-                    setTimeout(window.location.href="http://localhost:3000/register",3); 
-                } 
+                document.write(data);
             });
         }
     }
