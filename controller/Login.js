@@ -20,15 +20,15 @@ class Login{
 					}
 					else{
 						if(person.passwd == pwd && person.type == t){		
-							req.session.user = {userName:person.userName,
-								type:person.type};
-							res.render("form",{});
+							req.session.user = {userName:person.userName,type:person.type};
+							console.log(req.session.user);
+							res.send({isOK:true});
 						}
 						else if(person.type == t){
-							res.send("密码错误");
+							res.send({isOK:false});
 						}
 						else{
-							res.send("你不是管理员");
+							res.send({isOK:false});
 						}
 					}
 				});
@@ -47,7 +47,7 @@ class Login{
 					if(err)
 						console.log(err);
 					else{
-						res.render('relocate');
+						res.render('userHome');
 						console.log("success login in");
 					}
 				});
@@ -76,7 +76,7 @@ class Login{
 	};
 
 	 home(req,res,next){
-		res.render("login");
+		res.render("login_in");
 	};
 
 	 signup(req,res,next){
@@ -93,6 +93,24 @@ class Login{
 			res.render("error",err);
 		});
 	}
+
+	isLogin(req,res,next){
+		console.log("check session");
+        var person = req.session.user;
+		console.log(person);
+        if(person==null){
+            res.send({
+                isLogin:false,
+                person_:null
+            });
+        }
+        else{
+            res.send({
+                isLogin:true,
+                person_:person
+            });
+        }
+    }
 }
 
 const l = new Login();

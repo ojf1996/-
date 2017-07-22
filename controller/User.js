@@ -8,22 +8,6 @@ class user{
         res.render("userHome");
     }
 
-    isLogin(req,res,next){
-        var person = req.session.person;
-        if(person==null){
-            res.send({
-                isLogin:false,
-                person_:null
-            });
-        }
-        else{
-            res.send({
-                isLogin:true,
-                person_:person
-            });
-        }
-    }
-
     modifyPwd(req,res,next){
         var newPwd = req.body.password;
         var person = req.session.person;

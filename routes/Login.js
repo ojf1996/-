@@ -9,5 +9,7 @@ router.get('/checkUnique/:name',Login.checkUserName);
 router.post('signup',Login.register);
 router.get('/signup',Login.signup);
 router.get('/simpleLogin',Login.simpleLoginIn);
+router.get("/status",Login.isLogin);
+router.get("/logout",Login.loginOut);
 
 module.exports = router;
