@@ -2,11 +2,7 @@ var personModel = require( "../models/person");
 var bodyParser = require("body-parser");
 
 class Login{
-	constructor(){
-		this.login = this.login.bind(this);
-		this.register = this.register.bind(this);
-		this.checkUserName = this.checkUserName.bind(this);
-	}
+	constructor(){}
 
 	login (req,res,next){
 		try{
@@ -23,8 +19,11 @@ class Login{
 						res.send("请确定确定用户名是否正确");
 					}
 					else{
-						if(person.passwd == pwd && person.type == t)
+						if(person.passwd == pwd && person.type == t){		
+							req.session.user = {userName:person.userName,
+								type:person.type};
 							res.render("form",{});
+						}
 						else if(person.type == t){
 							res.send("密码错误");
 						}
@@ -77,7 +76,7 @@ class Login{
 	};
 
 	 home(req,res,next){
-		res.render("login_in");
+		res.render("login");
 	};
 
 	 signup(req,res,next){
@@ -87,6 +86,15 @@ class Login{
 	 simpleLoginIn(req,res,next){
 		res.render("login_box");
 	};
+
+	loginOut(req,res,next){
+		res.session.destory(function(err){
+			console.log(err);
+			res.render("error",err);
+		});
+	}
 }
 
-module.exports = new Login();
+const l = new Login();
+
+module.exports = l;

@@ -1,0 +1,93 @@
+.header{
+    height: 62px;
+    overflow:hidden;
+    zoom:1;
+    border-bottom: 1px solid #d6dfea;
+    background: #eff4fa;
+}
+div{
+    display: block;
+}
+
+.header_logo{
+    float: left;
+    width: 182px;
+    height: 35px;
+    margin-top: 14px;
+    text-indent:  -9999em;
+    background-size: 182px 35px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-image: url("http://localhost:3000/image/logo_.PNG")
+}
+
+.header_link{
+    overflow: hidden;
+    margin-top: 16px;
+    padding-right: 17px;
+    line-height:30px;
+    text-align: right;
+    color: #b6b6b6;
+}
+div{
+    display: block;
+}
+
+.content{
+    height: 830px;
+    margin: auto;
+    padding: 0 24px;
+}
+div{
+    display: block;
+}
+
+.dir{
+    height: 830px;
+    position: absolute;
+    left:0px;
+    width: 100px;
+    overflow:hidden;
+    zoom:1;
+    border-bottom: 1px solid #d6dfea;
+    background: #eff4fa;
+    float: left;
+    padding:5px;
+}
+
+.section{
+    height: 830px;
+    zoom:1;
+    position: absolute;
+    float: left;
+    border: none;
+    left: 110px;
+    padding:5px;
+    border-bottom: 1px solid #d6dfea;
+}
+iframe{
+    width: 800px;
+   height: 830px;
+    border: none;
+}
+
+
+
+.body{
+    font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+}
+
+.footer {
+    position: relative;
+    _position: static;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    clear: both;
+    line-height: 36px;
+    text-align: center;
+    color: #b6b6b6;
+    background-color: #eff4fa;
+    border-top: 1px solid #d6dfea;
+}

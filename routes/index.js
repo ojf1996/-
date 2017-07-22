@@ -1,9 +1,12 @@
 var Login = require("./Login");
+var User = require("./User");
+var View = require("./views");
+
 
 module.exports =  function(app){
 	app.use("/Login",Login);
-	app.use("/Data",Data);
-	
+	app.use("/User",User);
+	app.use("/views",View);
 	//404
 	app.use(function(req, res, next) {
 		var err = new Error("Not Found");
