@@ -11,5 +11,6 @@ router.get('/signup',Login.signup);
 router.get('/simpleLogin',Login.simpleLoginIn);
 router.get("/status",Login.isLogin);
 router.get("/logout",Login.loginOut);
+router.post("/modifyPwd",Login.modifyPwd);
 
 module.exports = router;

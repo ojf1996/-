@@ -88,9 +88,14 @@ class Login{
 	};
 
 	loginOut(req,res,next){
-		res.session.destory(function(err){
-			console.log(err);
-			res.render("error",err);
+		req.session.destroy(function(err){
+			if(err){
+				console.log(err);
+				res.render("error");
+			}
+			else{
+				res.render('userHome');
+			}
 		});
 	}
 
@@ -109,6 +114,28 @@ class Login{
                 isLogin:true,
                 person_:person
             });
+        }
+    }
+
+	modifyPwd(req,res,next){
+		console.log("modify pwd");
+		var oldPwd = req.body.old;
+        var newPwd = req.body.new;
+        var person = req.session.user;
+        if(person){
+            personModel.findOne({userName:person.userName,type:person.type},"userName passwd type",function(err,doc){
+                if(doc.passwd == oldPwd){
+					doc.passwd = newPwd;
+					doc.save();
+					res.send("修改成功");
+				}
+				else{
+					res.send("原密码错误");
+				}
+            });
+        }
+        else{
+            res.send("请先登录");
         }
     }
 }

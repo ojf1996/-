@@ -7,7 +7,7 @@ function isLogin(){
         if(data.isLogin == true){
             var d = document.getElementById("header_link");
             d.innerHTML = "<label>欢迎，"+data.person_.userName+" </label>"
-            +"<a href = 'javascript:void(0) onclick = 'javascript；ToUrl('http://localhost:3000/Login/logout')'>推出</a>";
+            +"<a href = 'http://localhost:3000/Login/logout' target = '_self'>退出</a>";
         }
     });
 }

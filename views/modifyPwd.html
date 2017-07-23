@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/register.css">
+	    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+        <script src="http://localhost:3000/js/modifyPwd.js"></script>
+    </head>
+    <body>
+        <div class = "header">
+        </div>
+        <div class = "container">
+            <form id = "myForm" autocomplete="off"> 
+                <div id = "user_name" class = "input">
+                    * 当前密码：<input class="inputform" name = "old" id = "old" type = "password"autocomplete="off"/>
+                </div>
+                <div id = "passwd" class = "input">
+                    * 密码：<input class="inputform" name = "new" id = "new" type = "password" autocomplete="off"/>
+                    <label style="left:340px;">密码由6-20位字符组成，区分大小写</label>
+                    <br/>
+                    <label>长度必须为6-20字符</label>
+                </div>
+                <div id = "checkPasswd" class = "input">
+                    * 密码确认<input class="inputform" name = "dcheck" id = "dcheck" type = "password" autocomplete="off"/>
+                </div>
+                <div class = "verifycode" id = "verify">
+                    * 验证码<input class="inputform" type = "text" id = "verifyCodeInput"/>
+                    <canvas id="myCanvas" width="60" height="40" style="top:0px; border:1px solid #d3d3d3;position:relative;left:350px;"></canvas>
+                    <br/>
+                    <label>请填写图片中验证码，不区分大小写</label>
+                    <label style="text-decoration:underline;" onclick="generateCode();" onselectstart="return false;">看不清楚，换一张图</label>
+                </div>
+                <div class="botton">
+                    <input class = "sbtn" id = "submit" type="botton" value="确定" onclick="sendNewPwd();"/>
+                    <input class = "rbtn" id = "reset" type="botton" value = "取消" onclick="re();" onselectstart="return false"; autocomplete="off"/>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
