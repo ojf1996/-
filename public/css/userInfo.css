@@ -1,0 +1,234 @@
+.body{
+    font-family: arial,tahoma,'Microsoft Yahei';
+}
+
+.container{
+	width:960px;
+	display:block;
+}
+
+.title_{
+	background-color:#87cefa;
+	width:804px;
+	height:40px;
+	border:2px solid black;
+}
+
+.area{
+    width:808px;
+	float:left;
+}
+
+.sec_1{
+    float: left;
+    width:404px;
+}
+
+.inputBlock{
+    width:400px;
+    height:50px;
+	border:2px solid black;
+}
+
+.textfield{
+	width:192px;
+    height:46px;
+	float:left;
+}
+.textfield label{
+	text-align:center;
+	position:relative;
+	top:10px;
+	left:10px;
+}
+
+.inputStyle{
+	position:relative;
+	float:right;
+    width:200px;
+	height:46px;
+}
+.inputStyle input{
+	position:relative;
+	top:10px;
+	width:150px;
+	height:30px;
+	font-size:15px;
+	border:1px solid grey;
+}
+
+.inputStyle select{
+	float:left;
+	top:10px;
+	height:30px;
+	width:150px;
+}
+
+.inputStyle2{
+	position:relative;
+	float:left;
+    width:200px;
+	height:46px;
+}
+.inputStyle2 input{
+	position:relative;
+	top:10px;
+	width:150px;
+	height:30px;
+	font-size:15px;
+	border:1px solid grey;
+}
+
+
+.imgBlock{
+	height:212px;
+	width:400px;
+	border:2px solid black;
+}
+
+.longInputBlock{
+	float:left;
+	width:804px;
+    height:50px;
+	border:2px solid black;
+}
+
+.longInputBlock{
+	float:left;
+	width:804px;
+    height:50px;
+	border:2px solid black;
+}
+
+.longInputBlock2{
+	float:left;
+	width:804px;
+	border:2px solid black;
+}
+
+.lInputStyle{
+	position:relative;
+	float:right;
+    width:600px;
+	height:46px;
+}
+.lInputStyle input{
+	position:relative;
+	width:400px;
+	height:30px;
+	font-size:15px;
+	border:1px solid grey;
+	top:10px;
+}
+
+.sec_2{
+	width: 808px;
+	float:left;
+}
+
+.Date_{
+	position: relative;
+	float:left;
+	width: 148px;
+	border: 1px solid black;
+	display:block;
+}
+
+.Date_ input{
+	width: 148px;
+	border: 1px solid black;
+	height: 80px;
+}
+
+
+.Text_{
+	position: relative;
+	float:left;
+	width: 248px;
+	border: 1px solid black;
+}
+
+
+.Text_ input{
+	width: 248px;
+	border: 1px solid black;
+	height: 80px;
+}
+
+.Select_{
+	width: 78px;
+	float: left;
+	position: relative;
+	border: 1px solid black;
+}
+
+
+.Select_ select{
+	width: 78px;
+	border: 1px solid black;
+	height: 80px;
+}
+
+.Button_{
+	width: 76px;
+	position: relative;
+	float: left;
+	border: 1px solid black;
+}
+
+.Button_ input{
+	width: 76px;
+	border: 1px solid black;
+	height: 80px;
+}
+
+.Text2_{
+	position: relative;
+	float:left;
+	width: 88px;
+	border: 1px solid black;
+}
+
+.Text2_ input{
+	width: 88px;
+	border: 1px solid black;
+	height: 80px;
+}
+
+.TBox{
+	width:806px;
+	height:100px;
+	border:1px solid black;
+}
+
+.TBox textarea{
+	width:806px;
+	height:100px; 
+}
+
+.Text3_{
+	width: 628px;
+	position: relative;
+	float: left;
+	border: 1px solid black;
+}
+
+.Text3_ input{
+	width: 628px;
+	border: 1px solid black;
+	height:80px;
+}
+
+.Select2_{
+	width: 98px;
+	float: left;
+	position: relative;
+	border: 1px solid black;
+}
+
+.Select2_ select{
+	width: 98px;
+	border: 1px solid black;
+	height: 80px;
+}
+
