@@ -1,6 +1,8 @@
 <html>
     <head>
-	<link rel="stylesheet" type="text/css" href="./userInfo.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost:3000/css/userInfo.css">
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+	<script src="/js/userInfo.js"></script>
     </head>
     <body>
         <div class = "header">
@@ -17,7 +19,7 @@
 							<label>专家证书编号：</label>
 						</div>
                         <div class = "inputStyle">
-                            <input id = "1" type = "text" disabled="disabled"></input>
+                            <input id = "1" type = "text"></input>
                         </div>
                     </div>
                     
@@ -26,7 +28,7 @@
 							<label>专家证书有效时间：</label>
 						</div>
                         <div class = "inputStyle">
-                            <input id = "2" type = "text" disabled="disabled"></input>
+                            <input id = "2" type = "date"></input>
                         </div>
                     </div>
                     
@@ -103,13 +105,12 @@
                             <input id = "9" type = "text"></input>*
                         </div>
                     </div>
-                    
                     <div class = "inputBlock">
 						<div class = "textfield">
 							<label>职务：</label>
                         </div>
 						<div class = "inputStyle">
-                            <input id = "11" type = "text"></input>*
+                            <input id = "10" type = "text"></input>*
                         </div>
                     </div>
                     
@@ -203,7 +204,7 @@
                     
                     <div class = "inputBlock">
 						<div class = "textfield">
-							<label>最高学位：</label>
+							<label>从业时长</label>
 						</div>
                         <div class = "inputStyle">
                             <select class = "inputStyle" id = "19" >
@@ -265,58 +266,74 @@
 							<label>毕业院校及专业</label>
 						</div>
 						<div class = "lInputStyle">
-							<input id = "24" type = "text"></input>*
+							<input id = "25" type = "text"></input>*
 						</div>
-					</div>
-					<div class = "longInputBlock2">
-                        <div class = "textfield">
-							<label>资格证书级编号</label>
-						</div>
-                        <div class = "inputStyle2">
-                            <input type = "text" id = "25"></input>
-                        </div>
-                        <div class = "inputStyle2">
-                            <input type = "text" id = "26"></input>
-                        </div>
-                        <div class = "textfield">
-                            <input type = "button" style="position:relative; top:10px;" width = "80px" value = "增加资格证书"></input>
-                            <input type = "button" style="position:relative; top:10px;" width = "80px" value = "删除"></input>
-                        </div>
 					</div>
                     <div class = "longInputBlock">
 						<div class = "textfield">
 							<label>评审领域：</label>
 						</div>
                         <div class = "inputStyle2">
+                            <input id = "26" type = "text" disabled = "disable"></input>
+						</div>
+						<div class = "inputStyle2">
                             <input id = "27" type = "text" disabled = "disable"></input>
 						</div>
 						<div class = "inputStyle2">
-                            <input id = "28" type = "text" disabled = "disable"></input>
+                            <input type = "button" id ="b1" value = "选择评审领域" onclick = "showDialog();"></input>
 						</div>
-						<div class = "inputStyle2">
-                            <input type = "button" value = "选择评审领域"></input>
+						<div class = "dialog" id = "d1">
+							<div class = "dialogHeader">
+								<label>评审领域最多两项</label>
+								<input type = "button" value = "确定" onclick = "addJudgeField();"/>
+								<input type = "button" value = "关闭" onclick = "closeDialog();"/>
+							</div>
+							<div class = "dialogForm">
+								<input type = "checkbox" value = "幼儿园评估" name = "judge"/>幼儿园评估
+								<input type = "checkbox" value = "小学教育评估" name = "judge"/>小学教育评估
+								<input type = "checkbox" value = "中学教育评估" name = "judge"/>中学教育评估
+								<br>
+								<input type = "checkbox" value = "中职教育评估" name = "judge"/>中职教育评估
+								<input type = "checkbox" value = "高职教育评估" name = "judge"/>高职教育评估
+								<input type = "checkbox" value = "高校教育评估" name = "judge"/>高校教育评估
+							</div>
 						</div>
                     </div>    
             </div>
+			<div class = "area">
+				 <div class = "title_">
+                    <b>资格证书 </b>
+                    <input type = "button" id ="b2" value = "增加资格证书" onclick = "addNewS();"></input>
+                </div>
+				<div class = "Text4_" id = "28">
+					<label>资格证书</label>
+				</div>
+				<div class = "Text4_" id = "29">
+					<label>资格证书级编号</label>
+				</div>
+				<div class = "Button_" id = "30">
+					<label>操作</label>
+				</div>
+			</div>
             <div class = "area">
                 <div class = "title_">
                     <b> 评估/评审经历 </b>
-                    <input type = "button" value = "增加评估/评审经历"></input>
+                    <input type = "button" id ="b3" value = "增加评估/评审经历" onclick = "addNewT();"></input>
                 </div>
                 <div class = "sec_2">
-                    <div class = "Date_">
+                    <div class = "Date_" id = "31">
                         <label>时间</label>
                     </div>
-                    <div class = "Text_">
+                    <div class = "Text_" id = "32">
                         <label>任务名称</label>
                     </div>
-                    <div class = "Text_">
+                    <div class = "Text_" id = "33">
                         <label>任务描述</label>
                     </div>
-                    <div class = "Select_">
+                    <div class = "Select_" id = "34">
                         <label>任务类型</label>
                     </div>
-                    <div class = "Button_">
+                    <div class = "Button_" id = "35">
                         <label>操作</label>
                     </div>
 				</div>
@@ -324,25 +341,25 @@
             <div class = "area">
                 <div class = "title_">
                     <b>工作经历 </b>
-                    <input type = "button" value = "增加工作经历"></input>
+                    <input type = "button" id ="b4" value = "增加工作经历" onclick = "addNewW();"></input>
                 </div>
                 <div class = "sec_2">
-                    <div class = "Date_">
+                    <div class = "Date_" id = "36">
                         <label>起始时间</label>
                     </div>
-                    <div class = "Date_">
+                    <div class = "Date_" id = "37">
                         <label>终止时间</label>
                     </div>
-                    <div class = "Text_">
+                    <div class = "Text_" id = "38">
                         <label>工作单位</label>
                     </div>
-                    <div class = "Text2_">
+                    <div class = "Text2_" id = "39">
                         <label>职务</label>
                     </div>
-                    <div class = "Text2_">
+                    <div class = "Text2_" id = "40">
                         <label>证明人</label>
                     </div>
-                    <div class = "Button_">
+                    <div class = "Button_" id = "41">
                         <label>操作</label>
                     </div>
                 </div>
@@ -352,7 +369,7 @@
                     <b>业务专长（不超过300字）</b>
                 </div>
                 <div class = "TBox">
-                    <textarea type = "text"></textarea>
+                    <textarea type = "text" id = "42"></textarea>
                 </div>
             </div>
             <div class = "area">
@@ -360,21 +377,21 @@
                     <b>工作业绩（不超过300字） </b>
                 </div>
                 <div class = "TBox">
-                    <textarea type = "text"></textarea>
+                    <textarea type = "text" id = "43"></textarea>
                 </div>
             </div>
             <div class = "area">
                 <div class = "title_">
                     <b>回避单位</b>
-                    <input type = "button" value = "增加回避单位"></input>
+                    <input type = "button" id ="b5" value = "增加回避单位" onclick = "addNewC();"></input>
                 </div>
-                <div class = "Text3_">
+                <div class = "Text3_" id= "44">
                     <label>单位名称</label>
                 </div>
-                <div class = "Select2_">
+                <div class = "Select2_" id = "45">
                     <label>是否工作单位<label>
                 </div>
-                <div class = "Button_">
+                <div class = "Button_" id = "46">
                     <label>操作<label>
                 </div>
             </div>
@@ -383,13 +400,14 @@
                      <b>其他说明（不超过300字） </b>
                 </div>
                 <div class = "TBox">
-                    <textarea type = "text"></textarea>
+                    <textarea type = "text" id = "47"></textarea>
                 </div>
             </div>
             <div class = "btn">
+				<input type = "button" value = "编辑" onclick="un1();"></input>
+				<input type = "button" value = "保存"></input>
+				<input type = "button" value = "提交"></input>
             </div>
-        </div>
-        <div class = "footer">
         </div>
     </body>
 </html>

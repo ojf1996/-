@@ -162,7 +162,6 @@
 	border: 1px solid black;
 }
 
-
 .Select_ select{
 	width: 78px;
 	border: 1px solid black;
@@ -174,12 +173,20 @@
 	position: relative;
 	float: left;
 	border: 1px solid black;
+	display:block;
 }
 
-.Button_ input{
+.buttonBlock{
 	width: 76px;
 	border: 1px solid black;
-	height: 80px;
+	height: 78px;
+}
+
+.buttonBlock input{
+	width:76px;
+	height:30px;
+	top:30px;
+	position:relative;
 }
 
 .Text2_{
@@ -219,6 +226,19 @@
 	height:80px;
 }
 
+.Text4_{
+	width: 363px;
+	position: relative;
+	float: left;
+	border: 1px solid black;
+}
+
+.Text4_ input{
+	width: 363px;
+	border: 1px solid black;
+	height:80px;
+}
+
 .Select2_{
 	width: 98px;
 	float: left;
@@ -232,3 +252,49 @@
 	height: 80px;
 }
 
+.btn{
+	width:806px;
+	border:1px solid black;
+	float:left;
+	position:relative;
+	height:40px;
+}
+
+.dialog{
+	display:none;
+	width: 400px;
+	height: 200px;
+	position:fixed !important;
+	left:30%;
+	top:40%;
+	z-index:5;
+	border:2px solid blue;
+	background-color:white;
+}
+
+.dialogHeader{
+	width:400px;
+	height:40px;
+	background-color:gray;
+}
+
+.dialogHeader label{
+	float:left;
+}
+
+.dialogHeader input{
+	float:right;
+	width:40px;
+	height:30px;
+}
+
+.dialogForm{
+	width:398px;
+	position:relative;
+	height:150px;
+}
+
+.dialogForm input{
+	border:1px solid black;
+	position:relative;
+}

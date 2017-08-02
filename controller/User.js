@@ -7,6 +7,10 @@ class user{
     home(req,res,next){
         res.render("userHome");
     }
+
+    userInfo(req,res,next){
+        res.render("userInfo");
+    }
 }
 
 const u = new user();
