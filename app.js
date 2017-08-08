@@ -19,7 +19,7 @@ app.use(cookieParser("fatCat"));
 app.use(session({
 	secret:  "fatCat",
 	resave: false,
-	saveUninitalized:false,
+	saveUninitialized:false,
 	httpOnly: true,
 	secure: false,
 	maxAge: 365 * 24 * 60 * 60 * 1000,

@@ -67,7 +67,6 @@ function re(){
 }
 
 function sendNewPwd(){
-    alert("what");
     var pwd = document.getElementById("old").value;
     var npwd = document.getElementById("new").value;
     var yes = checkpasswd();
@@ -79,7 +78,6 @@ function sendNewPwd(){
             old:pwd,
             new:npwd
         },function(data,status){
-            alert(data);
             document.getElementById("old").value = "";
             document.getElementById("new").value = "";
             document.getElementById("dcheck").value = "";
