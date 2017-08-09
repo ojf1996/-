@@ -4,6 +4,8 @@ var userModel = require( "../models/user");
 var qualityModel = require( "../models/quality");
 var avoidCompanyModel = require( "../models/avoidCompany");
 var experienceModel = require( "../models/experience");
+var path = require("path");
+var fs = require("fs");
 var bodyParser = require("body-parser");
 
 class user{
@@ -233,8 +235,8 @@ class user{
     }
 
     saveImg(req,res,next){
-        console.log(req.body);
-        console.log(req.files); 
+        console.log(req.file);
+        res.render("userInfo");
     }
 }
 

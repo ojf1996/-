@@ -11,5 +11,6 @@ const Person = db.model('Person',personSchema);
 
 personSchema.index({userName:1});
 
+
 module.exports = Person; 
 

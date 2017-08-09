@@ -1,9 +1,18 @@
 'use strict';
 var express = require("express");
+var path = require("path");
 var User = require("../controller/User");
 const router = express.Router();
 var multer = require("multer");
-var upload = multer({ dest:'../public/image/user'});
+var storage = multer.diskStorage({
+    destination:function(req,file,cb){
+        cb(null,path.join(__dirname,"../public/image/user"));
+    },
+    filename:function(req,file,cb){
+        cb(null,req.session.user.userName+".jpg");
+    }
+});
+var upload = multer({ storage:storage});
 
 router.get("/",User.home);
 router.get("/UserInfo",User.userInfo);

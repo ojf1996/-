@@ -13,10 +13,7 @@ function signin(){
             type:t
         },
         function(data,status){
-        if(data.isOK ==true )
-            window.parent.location = "http://localhost:3000/User/";
-        else
-            window.parent.location = "http://localhost:3000/Login/";
+            window.parent.location = data;
         }
     );
 }

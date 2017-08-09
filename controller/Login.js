@@ -16,19 +16,22 @@ class Login{
 						console.log(err);
 					console.log(person);
 					if(person==null){
-						res.send("请确定确定用户名是否正确");
+						res.send("http://localhost:3000/Login/");
 					}
 					else{
 						if(person.passwd == pwd && person.type == t){		
 							req.session.user = {userName:person.userName,type:person.type};
-							console.log(req.session.user);
-							res.send({isOK:true});
-						}
-						else if(person.type == t){
-							res.send({isOK:false});
+							if(person.type == 1){
+								console.log("user");
+								res.send("http://localhost:3000/User/");
+							}
+							else{
+								console.log("admin");
+								res.send("http://localhost:3000/Admin/");
+							}
 						}
 						else{
-							res.send({isOK:false});
+							res.send("http://localhost:3000/Login/");
 						}
 					}
 				});

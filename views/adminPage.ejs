@@ -1,0 +1,200 @@
+<html>
+    <head>
+        <style>
+            .container{
+                width: 920px;
+            }
+
+            .ExpertNo{
+                width: 200px;
+                position: relative;
+                float: left;
+                border: 1px solid black;
+            }
+
+            .ExpertNo a{
+                display: inline-block;
+                width: 200px;
+                height:30px;
+                text-align: left;
+                border: 1px solid black;
+            }
+
+            .ExpertNo label{
+                display: inline-block;
+                width: 200px;
+                height:30px;
+                text-align: left;
+                border: 1px solid black;
+            }
+
+            .ExpertName{
+                width: 100px;
+                position: relative;
+                float: left;
+                border: 1px solid black;
+            }
+
+            .ExpertName label{
+                display: inline-block;
+                width: 100px;
+                height:30px;
+                text-align: left;
+                border: 1px solid black;
+            }
+
+            .ExpertWorkplace{
+                width: 200px;
+                position: relative;
+                float: left;
+                border: 1px solid black;
+            }
+
+            .ExpertWorkplace label{
+                display: inline-block;
+                width: 200px;
+                height:30px;
+                text-align: left;
+                border: 1px solid black;
+            }
+
+            .ExpertType{
+                width: 100px;
+                position: relative;
+                float: left;
+                border: 1px solid black;
+            }
+
+            .ExpertType label{
+                display: inline-block;
+                width: 100px;
+                height:30px;
+                text-align: left;
+                border: 1px solid black;
+            }
+
+            .ExpertStatus{
+                width: 100px;
+                position: relative;
+                float: left;
+                border: 1px solid black;
+            }
+
+            .ExpertStatus label{
+                display: inline-block;
+                width: 100px;
+                height:30px;
+                text-align: left;
+                border: 1px solid black;
+            }
+
+            .ExpertPhone{
+                width: 200px;
+                position: relative;
+                float: left;
+                border: 1px solid black;
+            }
+
+            .ExpertPhone label{
+                display: inline-block;
+                width: 200px;
+                height:30px;
+                text-align: left;
+                border: 1px solid black;
+            }
+
+            .footer{
+                width: 100%;
+            }
+
+            ul.page {
+                display: inline-block;
+                padding: 0;
+                margin: 0;
+            }
+
+            ul.page li {display: inline;}
+
+            ul.page li a {
+                color: black;
+                float: left;
+                padding: 8px 16px;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "ExpertNo">
+                <label style="background-color:gray;width:200px;height:30px;border:1px solid black;text-align:center">专家编号</label>
+                <% for(var i=0;i < user.length;i++) { %>
+                    <a href='http://localhost:3000/Admin/expert?<%= user[i].userName%>' target='_blank'>
+                        <%= user[i].CID %></a>
+                <% } %>
+            </div>
+            <div class = "ExpertName">
+                <label style="background-color:gray;width:100%;height:30px;border:1px solid black;text-align:center">专家名</label>
+                <% for(var i=0;i < user.length;i++) { %>
+                    <label>
+                        <%= user[i].Name %>
+                    </label>
+                <% } %>
+            </div>
+            <div class = "ExpertWorkplace">
+                <label style="background-color:gray;width:200PX;height:30px;border:1px solid black;text-align:center">工作单位</label>
+                <% for(var i=0;i < user.length;i++) { %>
+                    <label>
+                        <%= user[i].worklPlace %>
+                    </label>
+                <% } %>
+            </div>
+            <div class = "ExpertPhone">
+                <label style="background-color:gray;width:200px;height:30px;border:1px solid black;text-align:center">联系电话</label>
+                <% for(var i=0;i < user.length;i++) { %>
+                    <label>
+                        <%= user[i].mobilephone %>
+                    </label>
+                <% } %>
+            </div>
+            <div class = "ExpertType">
+                <label style="background-color:gray;width:100px;height:30px;border:1px solid black;text-align:center">入库类型</label>
+                <% for(var i=0;i < user.length;i++) { %>
+                    <label>
+                        注册
+                    </label>
+                <% } %>
+            </div>
+            <div class = "ExpertStatus">
+                <label style="background-color:gray;width:100px;height:30px;border:1px solid black;text-align:center">状态</label>
+                <% for(var i=0;i < user.length;i++) { %>
+                    <label>
+                        <%= user[i].status %>
+                    </label>
+                <% } %>
+            </div>
+            <div class = "footer">
+            <ul class = "page">
+                <li>
+                    <a href="http://localhost:3000/Admin/Pages/?judgeField=<%=judgeField%>&status=<%=status%>&currPage=0">
+                        第一页
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost:3000/Admin/Pages/?judgeField=<%=judgeField%>&status=<%=status%>&currPage=<%= currPage - 1 %>">
+                        上一页
+                    </a>
+                </li style = "padding: 8px 16px; display: inline;">
+                <li>
+                    <a>
+                     当前页数:<%= currPage %>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost:3000/Admin/Pages/?judgeField=<%=judgeField%>&status=<%=status%>&currPage=<%= currPage + 1 %>">
+                        下一页
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

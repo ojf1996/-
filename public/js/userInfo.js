@@ -184,11 +184,10 @@ function deleteC(index){
 function saveData(){
 	saveBasicInfo();
 	setTimeout(saveS,1);
-	setTimeout(saveT,1);
-	setTimeout(saveW,1);
-	setTimeout(saveC,1);
-	setTimeout(selectImg,1);
-	window.location = "http://localhost:3000/User/UserInfo";
+	setTimeout(saveT,2);
+	setTimeout(saveW,3);
+	setTimeout(saveC,4);
+	setTimeout(selectImg,5);
 }
 
 function saveBasicInfo(){
@@ -274,6 +273,10 @@ function getBasicInfo(){
 				$("#47").val(data.others);
 			}
 	});
+
+	$.get("http://localhost:3000/Login/status",function(data,err){
+		$("#img").attr({"src":"http://localhost:3000/image/user/"+data.person_.userName+".jpg"});
+	})
 }
 
 function getS(){
