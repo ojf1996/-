@@ -18,6 +18,7 @@ router.get("/",User.home);
 router.get("/UserInfo",User.userInfo);
 router.post("/basicInfo",User.saveBasicInfo);
 router.get("/basicInfo",User.getBasicInfo);
+router.post("/commitBasicInfo",User.commitBasicInfo);
 router.get("/getQuality",User.getQuality);
 router.post("/deleteOldQuality",User.deleteOldQuality);
 router.post("/saveQuality",User.saveQuality);

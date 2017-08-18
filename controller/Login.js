@@ -1,4 +1,5 @@
 var personModel = require( "../models/person");
+var userModel = require("../models/user");
 var bodyParser = require("body-parser");
 
 class Login{
@@ -42,20 +43,17 @@ class Login{
 	};
 
 	register(req,res,next){
+		console.log("register");
 		var uName = req.body.name;
 		var pwd = req.body.password;
 			try{
 				var p = new personModel({userName:uName,passwd:pwd,type:1});
-				p.save(function(err){
-					if(err)
-						console.log(err);
-					else{
-						res.render('userHome');
-						console.log("success login in");
-					}
-				});
+				p.save();
+				var u = new userModel({userName:uName,status:"填写中",isCommit:false});
+				u.save();
+				res.render('userHome');
+				console.log("success sign up");
 			}catch(err){
-				console.log(err);
 				res.render("error",err);
 			}
 	};

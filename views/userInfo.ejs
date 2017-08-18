@@ -143,7 +143,7 @@
 							<label>移动电话：</label>
 						</div>
                         <div class = "inputStyle">
-                            <input id = "13" type = "text"></input>*
+                            <input id = "13" type = "text" onchange="checkphone();"></input>*
                         </div>
                     </div>
                     
@@ -182,7 +182,7 @@
 							<label>证件编号：</label>
 						</div>
                         <div class = "inputStyle">
-                            <input id = "16" type = "text"></input>*
+                            <input id = "16" type = "text" onchange="checkid();"></input>*
                         </div>
                     </div>
                     
@@ -238,7 +238,7 @@
 							<label>电子邮箱：</label>
 						</div>
                         <div class = "inputStyle">
-                            <input id = "21" type = "text"></input>*
+                            <input id = "21" type = "text" onchange="checkEmail();"></input>*
                         </div>
                     </div>
                     
@@ -410,9 +410,9 @@
                 </div>
             </div>
             <div class = "btn">
-				<input type = "button" value = "编辑" onclick="un1();"></input>
+				<input type = "button" value = "编辑" id = "btn1"></input>
 				<input type = "button" value = "保存" onclick="saveData();"></input>
-				<input type = "button" value = "提交"></input>
+				<input type = "button" value = "提交" onclick="commitData()"></input>
             </div>
         </div>
     </body>

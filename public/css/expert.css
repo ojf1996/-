@@ -1,0 +1,278 @@
+            .header{
+                width: 798px;
+                height: 62px;
+                overflow:hidden;
+                zoom:1;
+                border-bottom: 1px solid #d6dfea;
+                background: #eff4fa;
+                border: 1px solid black;
+            }
+            div{
+                display: block;
+            }
+            .container{
+                width: 800px;
+            }
+            .sec_1{
+                width: 400px;
+                position: relative;
+                float: left;
+            }
+            .box{
+                width: 400px;
+                position: relative;
+                float: left;
+                height:40px;
+            }
+            .textbox{
+               width: 198px;
+               border: 1px solid black;
+               height: 38px;
+               position: relative;
+               float: left;
+               margin-top:-1px;
+            }
+            .textbox label{
+               position: relative;
+               float: left;
+               top: 5px;
+            }
+            .textbox input{
+               width: 200px;
+               position: relative;
+               float: left; 
+               height: 38px;
+            }
+            .imgBox{
+                margin-top:-1px;
+                width: 400px;
+                height: 161px;
+                position: relative;
+                float: left;
+            }
+            .sec_2{
+                width:800px;
+                float: left;
+                margin-top:-1px;
+            }
+            .long{
+                width: 800px;
+                height: 40px;
+                float: left;
+            }
+            .long input{
+                width: 534px;
+                height:40px;
+                border: 1px solid black;
+                float: left;
+                margin-top:-1px;
+            }
+            .long label{
+                margin-top:-1px;
+                display: inline-block;
+                float: left;
+                width: 264px;
+                height: 38px;
+                border: 1px solid black;
+            }
+            .block{
+                width: 800px;
+                float: left;
+            }
+            .tittle{
+                display: inline-block;
+                background-color:#87cefa;
+                width:798px;
+                height:40px;
+                border:1px solid black;
+            }
+            .qca{
+                background: none;
+                width: 400px;
+                position: relative;
+                float: left;
+            }
+            .qca label{
+                display: block;
+                width: 398px;
+                height: 38px;
+                border: 1px solid black;
+                position: relative;
+                float: left;
+            }
+            .qcaid{
+                background: none;
+                width: 400px;
+                position: relative;
+                float: left;
+            }
+            .qcaid label{
+                display: block;
+                width: 398px;
+                height: 38px;
+                border: 1px solid black;
+                position: relative;
+                float: left;
+            }
+            .judgeTime{
+                width: 200px;
+                position: relative;
+                float: left;
+            }
+            .judgeName{
+                width: 200px;
+                position: relative;
+                float: left;
+            }
+            .judgeDesc{
+                width: 300px;
+                position: relative;
+                float: left;
+            }
+            .judgeType{
+                width: 100px;
+                position: relative;
+                float: left;
+            }
+            .workTime{
+                width:200px;
+                position: relative;
+                float: left;
+            }
+            .workName{
+                display: block;
+                width:200px;
+                position: relative;
+                float: left;
+            }
+            .workPos{
+                display: block;
+                width:100px;
+                position: relative;
+                float: left;
+            }
+            .workC{
+                width:100px;
+                height: 40px;
+                position: relative;
+                float: left;
+            }
+            .avoidWork{
+                display: block;
+                width:400px;
+                position: relative;
+                float: left;
+            }
+            .avoidBool{
+                width:400px;
+                position: relative;
+                float: left;
+            }
+            .judgeTime label{
+                display: block;
+                width: 198px;
+                position: relative;
+                height: 38px;
+                float: left;
+                border: 1px solid black;
+            }
+            .judgeName label{
+                display: block;
+                width: 198px;
+                position: relative;
+                height: 38px;
+                float: left;
+                border: 1px solid black;
+            }
+            .judgeDesc label{
+                display: block;
+                width: 298px;
+                position: relative;
+                height: 38px;
+                float: left;
+                border: 1px solid black;
+            }
+            .judgeType label{
+                display: block;
+                width: 98px;
+                position: relative;
+                float: left;
+                height: 38px;
+                border: 1px solid black;
+            }
+
+            .workTime label{
+                display: block;
+                width:198px;
+                height: 38px;
+                position: relative;
+                border: 1px solid black;
+                float: left;
+            }
+            .workName label{
+                display: block;
+                width:198px;
+                height: 38px;
+                position: relative;
+                border: 1px solid black;
+                float: left;
+            }
+            .workPos label{
+                display: block;
+                width:98px;
+                height: 38px;
+                position: relative;
+                border: 1px solid black;
+                float: left;
+            }
+            .workC label{
+                display: block;
+                width:98px;
+                height: 38px;
+                position: relative;
+                border: 1px solid black;
+                float: left;
+            }
+            .avoidWork label{
+                display: block;
+                width:398px;
+                height: 38px;
+                position: relative;
+                border: 1px solid black;
+                float: left;
+            }
+            .avoidBool label{
+                display: block;
+                width:398px;
+                height: 38px;
+                position: relative;
+                border: 1px solid black;
+                float: left;
+            }
+            .text{
+                width:800px;
+                float:left;
+            }
+            .text textarea{
+                display: block;
+                width:800px;
+                border:1px solid black;
+                min-height:100px;
+            }
+            .suggestion{
+                width: 800px;
+                float: left;
+            }
+            .suggestion textarea{
+                width: 800px;
+                height: 100px;
+                border: 1px solid black;
+                float: left;
+            }
+            .btn{
+                width: 798px;
+                border: 1px solid black;
+                float: left;
+                text-align: center;
+            }
+

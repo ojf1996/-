@@ -31,7 +31,6 @@ function verify(){
         document.getElementById("verifyCodeInput").value = "";
         return false;
     }
-    alert("验证码正确");
     return true;
 }
 
@@ -72,17 +71,12 @@ function sendNewPwd(){
     var yes = checkpasswd();
     yes &= doublecheckpwd();
     yes &= verify();
-    alert(yes);
     if(yes){
         $.post("http://localhost:3000/Login/modifyPwd",{
             old:pwd,
             new:npwd
         },function(data,status){
-            document.getElementById("old").value = "";
-            document.getElementById("new").value = "";
-            document.getElementById("dcheck").value = "";
-            document.getElementById("verifyCodeInput").value = "";
-            generateCode();
+            document.write(data);
         })
     }
 }

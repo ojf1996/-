@@ -120,13 +120,7 @@ function doublecheckpwd(){
 }
 
 function re(){
-     $("#csts").hide();
-     $("#psts").hide();
-     $("#sts").hide();
-     document.getElementById('checkPwd').value = "";
-     document.getElementById('passwd').value = "";
-     document.getElementById('userName').value = "";
-     generateCode();
+     window.location.reload();
 }
 
 function senddata(){
@@ -135,7 +129,7 @@ function senddata(){
             var n = document.getElementById('userName').value;
             var pwd = document.getElementById('pwd').value;
             alert("发送数据"); 
-            $.post("http://localhost:3000/Login/signup",
+            $.post("http://localhost:3000/Login/register",
             {
                 name:n,
                 password:pwd,

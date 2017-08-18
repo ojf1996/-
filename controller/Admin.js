@@ -5,6 +5,8 @@ var qualityModel = require( "../models/quality");
 var avoidCompanyModel = require( "../models/avoidCompany");
 var experienceModel = require( "../models/experience");
 var bodyParser = require("body-parser");
+var Promise = require("bluebird");
+var moment = require("moment");
 
 class admin{
     constructor(){}
@@ -12,9 +14,8 @@ class admin{
     home(req,res,next){
         var userName_ =  req.session.user.userName;
         var type = req.session.user.type;
-        console.log(req.session.user);
         if(userName_ && type == 2){
-            userModel.count({status:"审核中"}).then(
+            userModel.count({status:"待审核"}).then(
                 function(count){
                     console.log(count);
                     res.render("adminHome",{count:count});
@@ -40,7 +41,6 @@ class admin{
     list(req,res,next){
         var userName_ =  req.session.user.userName;
         var type = req.session.user.type;
-        console.log(req.session.user);
         if(userName_ && type == 2){
             var uField = req.query.judgeField;
             var uStatus = req.query.status;
@@ -49,7 +49,6 @@ class admin{
                 page = 1;
             if(page<0)
                 page = 1;
-            console.log(req.query);
             if(uField && uStatus){
                 userModel.find(
                     {
@@ -95,6 +94,125 @@ class admin{
         else{
             res.render("login_in");
         }
+    }
+
+    expertInfo(req,res,next){
+        var userName_ =  req.session.user.userName;
+        var type = req.session.user.type;
+        if(userName_ && type == 2){
+            var expertName = req.query.name;
+            Promise.all([
+                userModel.findOne({userName:expertName},"-isCommit"),
+                avoidCompanyModel.find({userName:expertName},"-userName"),
+                experienceModel.find({userName:expertName},"-userName"),
+                qualityModel.find({userName:expertName},"-userName"),
+                workExperienceModel.find({userName:expertName},"-userName")
+            ]).then(function(re){ 
+                res.render("expert",{
+                    user:re[0],
+                    judge:re[2],
+                    quality:re[3],
+                    avoid:re[1],
+                    work:re[4],
+                    moment:moment
+                });
+            }).catch(next);
+        }
+        else{
+            res.render("login_in");
+        }
+    }
+
+    accept(req,res,next){
+        var userName_ =  req.session.user.userName;
+        var type = req.session.user.type;
+        if(userName_ && type == 2){
+            console.log(req.body);
+            var userName = req.body.userName;
+            var cid = req.body.CID;
+            var vdate = req.body.verifydate; 
+            userModel.findOne({userName:userName}).then(function(doc){
+                doc.status = "可用";
+                doc.CID = cid;
+                doc.verifyDate = vdate;
+                doc.save(function(err){
+                    if(!err){
+                        res.status(200);
+                        res.end();
+                    }
+                    else{
+                        res.render("error",err);
+                    }
+                })
+            }).catch(next);
+        }
+        else{
+            res.status(404);
+            res.end();
+        }
+    }
+
+    reject(req,res,next){
+        var userName_ =  req.session.user.userName;
+        var type = req.session.user.type;
+        if(userName_ && type == 2){
+            console.log(req.body);
+            var userName = req.body.userName;
+            var cid = req.body.CID;
+            var vdate = req.body.verifydate; 
+            var suggestion = req.body.suggestion; 
+            userModel.findOne({userName:userName}).then(function(doc){
+                doc.status = "已驳回";
+                doc.CID = cid;
+                doc.verifyDate = vdate;
+                doc.suggestion = suggestion;
+                doc.save(function(err){
+                    if(!err){
+                        res.status(200);
+                        res.end();
+                    }
+                    else{
+                        res.render("error",err);
+                    }
+                })
+            }).catch(next);
+        }
+        else{
+            res.status(404);
+            res.end();
+        }
+    }
+
+    cancel(req,res,next){
+        var userName_ =  req.session.user.userName;
+        var type = req.session.user.type;
+        if(userName_ && type == 2){
+            console.log(req.body);
+            var userName = req.body.userName;
+            var cid = req.body.CID;
+            var vdate = req.body.verifydate; 
+            var suggestion = req.body.suggestion; 
+            userModel.findOne({userName:userName}).then(function(doc){
+                doc.status = "失效";
+                doc.CID = cid;
+                doc.verifyDate = vdate;
+                doc.suggestion = suggestion;
+                doc.save(function(err){
+                    if(!err){
+                        res.status(200);
+                        res.end();
+                    }
+                    else{
+                        console.log(err);
+                        res.render("error",err);
+                    }
+                })
+            }).catch(next);
+        }
+        else{
+            res.status(404);
+            res.end();
+        }        
     }
 }
 

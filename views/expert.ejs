@@ -1,17 +1,418 @@
 <html>
     <head>
-        <script>
-        </script>
-        <style>
-        </style>
+        <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/expert.css">
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
     </head>
     <body>
         <div class = "header">
+            基本信息
         </div>
         <div class = "container">
-            <div class = "header">
-                
-            </div>      
+            <input type = "text" id = "u1" style="display:none;" value = "<%= user.userName%>">
+            <div class = "sec_1">
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>专家证书编号</label>
+                    </div>
+                    <div class = "textbox">
+                        <input type = "text" id = "cid" value = "<%= user.CID %>"/> 
+                    </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>专家证书有效时间</label>
+                    </div>
+                    <div class = "textbox">
+                        <input type = "date" id = "vdate" value = "<%= moment(user.verifyDate).format('YYYY-MM-DD')%>"/>
+                    </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>专家姓名</label>
+                    </div>
+                    <div class = "textbox">
+                        <label><%= user.Name %></label>
+                    </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>专家性别</label>
+                    </div>
+                    <div class = "textbox">
+                        <label><%= user.sex %></label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>出生日期</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= moment(user.birthday).format("YYYY-MM-DD") %></label>
+                    </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>政治面貌</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.politics %> </label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>颁证机构</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.CA %> </label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>最高学历</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.education %> </label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>职称</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.tittle %> </label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>职务</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.position %> </label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>是否退休</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.retired %> </label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>邮政编码</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.mail %> </label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>移动电话</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.mobilephone %> </label>
+                     </div>
+                </div>
+            </div>
+            <div class = "sec_1">
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>状态</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.status %> </label>
+                     </div>
+                </div>
+                <div class = "imgBox">
+                    <div style="width:198px;border:1px solid black;height:159px;float:left;">
+                        <label>照片</label>
+                    </div>
+                    <div style="vertical-align: middle;text-align: center;width:198px;border:1px solid black;height:159px;float:left;">
+                        <img style="max-width:200px;max-height:160px;" src = "http://localhost:3000/image/user/<%= user.userName%>.jpg"></jpg>
+                    </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>证件类型</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.typeOfcertificate %> </label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>证件编号</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.ID %> </label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>最高学历</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.academic %> </label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>证书编号</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.aID %> </label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>从业时长</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.workAge %> </label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>是否兼职</label>
+                     </div>    
+                    <div class = "textbox">
+                        <label><%= user.isPartimeL %> </label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>电子邮箱</label>
+                    </div>
+                    <div class = "textbox">
+                        <label><%= user.E_mail %> </label>
+                     </div>
+                </div>
+                <div class = "box">
+                    <div class = "textbox">
+                        <label>家庭电话</label>
+                     </div>
+                    <div class = "textbox">
+                        <label><%= user.homePhone %> </label>
+                     </div>
+                </div>
+            </div>
+            <div class = "sec_2">
+                <div class = "long">
+                    <label>工作单位</label>
+                    <input type = "text" disabled = "a" value = "<%= user.worklPlace%>">
+                </div>
+                <div class = "long">
+                    <label>详细通信地址</label>
+                    <input type = "text" disabled = "a" value = "<%= user.detailAddress%>">
+                </div>
+                <div class = "long">
+                    <label>毕业院校及专业</label>
+                    <input type = "text" disabled = "a" value = "<%= user.School%>">
+                </div>
+                <div class = "long">
+                    <label>评审领域</label>
+                    <label><%=user.judgeField1%></label>
+                    <label style="width:266px;"><%=user.judgeField2%></label>
+                </div>
+            </div>
+            <div class = "sec_2">
+                <div class = "block">
+                    <div class = "tittle">
+                        <label>资格证书</label>
+                    </div>
+                    <div class = "qca">
+                        <label>资格证书</label>
+                        <% for(var i = 0; i < quality.length;++i){ %>
+                            <label><%= quality[i].Sname%>
+                        <% } %>
+                    </div>
+                    <div class = "qcaid">
+                        <label>资格证书编号</label>
+                        <% for(var i = 0; i < quality.length;++i){ %>
+                            <label><%= quality[i].Sid%>
+                        <% } %>
+                    </div>       
+                </div>
+                <div class = "block">
+                    <div class = "tittle">
+                        <label>评估/评审经历</label>
+                    </div>
+                    <div class = "judgeTime">
+                        <label>时间</label>
+                        <% for(var i = 0; i < judge.length;++i){ %>
+                            <label><%= moment(judge[i].time).format("YYYY-MM-DD") %>
+                        <% } %>
+                    </div>
+                    <div class = "judgeName">
+                        <label>任务名称</label>
+                        <% for(var i = 0; i < judge.length;++i){ %>
+                            <label><%=judge[i].name %>
+                        <% } %>
+                    </div>
+                    <div class = "judgeDesc">
+                        <label>任务描述</label>
+                        <% for(var i = 0; i < judge.length;++i){ %>
+                            <label><%=judge[i].desc %>
+                        <% } %>
+                    </div>
+                    <div class = "judgeType">
+                        <label>任务类型</label>
+                        <% for(var i = 0; i < judge.length;++i){ %>
+                            <label><%=judge[i].type %>
+                        <% } %>
+                    </div>
+                </div>
+                <div class = "block">
+                    <div class = "tittle">
+                        <label>工作经历</label>
+                    </div>
+                    <div class = "workTime">
+                        <label>开始时间</label>
+                        <% for(var i = 0; i < work.length;++i){ %>
+                            <label><%= moment(work[i].startTime).format("YYYY-MM-DD") %>
+                        <% } %>
+                    </div>
+                    <div class = "WorkTime">
+                        <label>结束时间</label>
+                        <% for(var i = 0; i < work.length;++i){ %>
+                            <label><%= moment(work[i].endTime).format("YYYY-MM-DD") %>
+                        <% } %>
+                    </div>
+                    <div class = "workName">
+                        <label>工作单位</label>
+                        <% for(var i = 0; i < work.length;++i){ %>
+                            <label><%=work[i].workplace %>
+                        <% } %>
+                    </div>
+                    <div class = "workPos">
+                        <label>职务</label>
+                        <% for(var i = 0; i < work.length;++i){ %>
+                            <label><%=work[i].position %>
+                        <% } %>
+                    </div>
+                    <div class = "workC">
+                        <label>证明人</label>
+                        <% for(var i = 0; i < work.length;++i){ %>
+                            <label><%=work[i].certifier %>
+                        <% } %>
+                    </div>
+                </div>
+                <div class = "block">
+                    <div class = "tittle">
+                        <label>回避单位</label>
+                    </div>
+                    <div class = "avoidWork">
+                        <label>单位名称</label>
+                        <% for(var i = 0; i < avoid.length;++i){ %>
+                            <label><%= avoid[i].name%>
+                        <% } %>
+                    </div>
+                    <div class = "avoidBool">
+                        <label>是否工作单位</label>
+                        <% for(var i = 0; i < avoid.length;++i){ %>
+                            <label><%=avoid[i].isWorkplace %>
+                        <% } %>
+                    </div>
+                </div>
+                <div class = "text">
+                    <div class ="tittle">
+                        <label>业务专长</label>    
+                    </div>
+                    <textarea><%= user.advantage%></textarea>
+                </div>
+                <div class = "text">
+                    <div class ="tittle">
+                        <label>工作业绩</label>        
+                    </div>
+                    <textarea><%= user.achivement%></textarea>
+                </div>
+                <div class = "text">
+                    <div class ="tittle">
+                        <label>其他说明</label>
+                    </div>
+                    <textarea><%= user.others%></textarea>  
+                </div>
+            </div>
+        </div>
+        <div class style="width:800px;">
+            <div class = "button">
+                <div style="float:left; width:264px;height:38px;border:1px solid black;text-align:center;">
+                    <input style="position:relative; top:10px;" type = "button" value = "同意申请" onclick="accecpt();"></input>
+                </div>
+                <div style="float:left; width:264px;height:38px;border:1px solid black;text-align:center;">
+				    <input style="position:relative;  top:10px;"  type = "button" value = "驳回申请" onclick="showD1();"></input>
+                </div>
+                <div style="float:left;width:266px;height:38px;border:1px solid black;text-align:center;">
+				    <input style="position:relative;  top:10px;"  type = "button" value = "终止资格" onclick="showD2();"></input>
+                </div> 
+            </div>
+            <div id = "d1" class = "suggestion" style="display:none;">
+                <div class = "tittle">
+                    <label>请填写驳回原因（500字以内）</label>
+                </div>
+                <textarea id = "d1t"></textarea>
+                <div class="btn">
+                    <input type = "button" value = "确定" onclick="reject();"/>
+                    <input type = "button" value = "取消" onclick="closeD1();"/>
+                </div>
+            </div>
+            <div id = "d2" class = "suggestion" style="display:none;">
+                <div class = "tittle">
+                        <label>请填写终止原因（500字以内）</label>
+                </div>
+                <textarea id = "d2t"></textarea>
+                <div class="btn">
+                    <input type = "button" value = "确定" onclick="cancel();"/>
+                    <input type = "button" value = "取消" onclick="closeD2();"/>
+                </div>
+            </div>
         </div>
     </body>
+    <script>
+        function showD1(){
+            $("#d1").show();
+        }
+        function showD2(){
+            $("#d2").show();
+        }
+        function closeD1(){
+            $("#d1t").val(""); 
+            $("#d1").hide();
+        }
+        function closeD2(){
+            $("#d2t").val(""); 
+            $("#d2").hide();
+        }
+        function reject(){
+            $.post("http://localhost:3000/Admin/Reject/",{
+                userName:$("#u1").val(),
+                CID:$("#cid").val(),
+                verifydate:$("#vdate").val(),
+                suggestion:$("#d1t").val()
+            },function(data,status){
+                window.location.reload();
+            })
+        }
+         function cancel(){
+            $.post("http://localhost:3000/Admin/Cancel/",{
+                userName:$("#u1").val(),
+                CID:$("#cid").val(),
+                verifydate:$("#vdate").val(),
+                suggestion:$("#d2t").val()
+            },function(data,status){
+                window.location.reload();
+            })
+        }
+        function accecpt(){
+            alert($("#u1").val());
+            $.post("http://localhost:3000/Admin/Accept/",{
+                userName:$("#u1").val(),
+                CID:$("#cid").val(),
+                verifydate:$("#vdate").val()
+            },function(data,status){
+                window.location.reload();
+            })
+        }
+    </script>
 </html>

@@ -61,6 +61,34 @@ function un2(){
 	$("#42").removeAttr("disabled");
 	$("#43").removeAttr("disabled");
 	$("#47").removeAttr("disabled");
+	for(var i = 1; i <= Sno;++i){
+		$("#"+"Sname_"+i.toString()).removeAttr("disabled");
+		$("#"+"Sid_"+i.toString()).removeAttr("disabled");
+		$("#"+"Sop_"+i.toString()).removeAttr("disabled");
+	}
+	for(var i = 1; i <= Tno;++i){
+		$("#"+"Tdate_"+i.toString()).removeAttr("disabled");
+		$("#"+"Tname_"+i.toString()).removeAttr("disabled");
+		$("#"+"Tdesc_"+i.toString()).removeAttr("disabled");
+		$("#"+"Ttype_"+i.toString()).removeAttr("disabled");
+		$("#"+"Top_"+i.toString()).removeAttr("disabled");
+	}
+	for(var i = 1; i <= Sno;++i){
+		$("#"+"Wdate1_"+i.toString()).removeAttr("disabled");
+		$("#"+"Wdate2_"+i.toString()).removeAttr("disabled");
+		$("#"+"Wname_"+i.toString()).removeAttr("disabled");
+		$("#"+"Wpos_"+i.toString()).removeAttr("disabled");
+		$("#"+"Wpro_"+i.toString()).removeAttr("disabled");
+	}
+	for(var i = 1; i <= Tno;++i){
+		$("#"+"Cdesc_"+i.toString()).removeAttr("disabled");
+		$("#"+"Cbool_"+i.toString()).removeAttr("disabled");
+	}
+	for(var i = 1; i <= 5; ++i)
+		$("#b"+i.toString()).removeAttr("disabled");
+	$("#42").removeAttr("disabled");
+	$("#43").removeAttr("disabled");
+	$("#47").removeAttr("disabled");
 }
 
 function lock(){
@@ -188,6 +216,65 @@ function saveData(){
 	setTimeout(saveW,3);
 	setTimeout(saveC,4);
 	setTimeout(selectImg,5);
+	window.location = "http://localhost:3000/User/UserInfo";
+}
+
+function commitData(){
+	alert("?");
+	commitBasicInfo();
+	setTimeout(saveS,1);
+	setTimeout(saveT,2);
+	setTimeout(saveW,3);
+	setTimeout(saveC,4);
+	setTimeout(selectImg,5);
+	window.location = "http://localhost:3000/User/UserInfo";
+}
+
+function commitBasicInfo(){
+	var select1 = $("#4");
+	var select2 = document.getElementById('8');
+	var select3 = document.getElementById('11');
+	var select4 = document.getElementById('15');
+	var select5 = document.getElementById('17');
+	var select6 = document.getElementById('19');
+	var select7 = document.getElementById('20');
+
+	var basicInfo = {
+		Name:document.getElementById('3').value,
+		sex:$("#4").val(),
+		birthday:document.getElementById('5').value,
+		politics:document.getElementById('6').value,
+		CA:document.getElementById('7').value,
+		education:$("#8").val(),
+		tittle:document.getElementById('9').value,
+		position:document.getElementById('10').value,
+		retired:$("#11").val(),
+		mail:document.getElementById('12').value,
+		E_mail:document.getElementById('22').value,
+		mobilephone:document.getElementById('13').value,
+		typeOfcertificate:$("#15").val(),
+		ID:document.getElementById('16').value,
+		academic:$("#17").val(),
+		aID:document.getElementById('18').value,
+		workAge:$("#19").val(),
+		isPartimeL:$("#20").val(),
+		homePhone:document.getElementById('21').value,
+		worklPlace:document.getElementById('23').value,
+		detailAddress:document.getElementById('24').value,
+		School:document.getElementById('25').value,
+		judgeField1:document.getElementById('26').value,
+		judgeField2:document.getElementById('27').value,
+		advantage:document.getElementById('42') .value,
+		achivement:document.getElementById('43').value,
+		others:document.getElementById('47').value,
+	};
+
+	$.post("http://localhost:3000/User/commitBasicInfo",
+			basicInfo,
+			function(res,err){
+				window.location = "http://localhost:3000/User/";
+			}
+	);
 }
 
 function saveBasicInfo(){
@@ -242,25 +329,25 @@ function getBasicInfo(){
 		function(data,err){
 			if(data!= null){
 				$("#1").val(data.CID);
-				$("#2").val(data.verifyDate);
+				if(data.verifyDate)$("#2").val(data.verifyDate.substring(0,10));
 				$("#3").val(data.Name);
 				$("#4").val(data.sex);
-				$("#5").val(data.birthday.substring(0,10));
+				if(data.birthday)$("#5").val(data.birthday.substring(0,10));
 				$("#6").val(data.politics);
 				$("#7").val(data.CA);
 				$("#8").val(data.education);
 				$("#9").val(data.tittle);
 				$("#10").val(data.position);
-				$("#11").find("option[text='"+data.retired+"']").attr("selected",true);
+				if(data.retired)$("#11").find("option[text='"+data.retired+"']").attr("selected",true);
 				$("#12").val(data.mail);
 				$("#13").val(data.mobilephone);
 				$("#14").text(data.status);
-				$("#15").find("option[text='"+data.typeOfcertificate+"']").attr("selected",true);
-				$("#16").val(data.academic);
-				$("#17").find("option[text='"+data.academic+"']").attr("selected",true);
-				$("#18").val(data.ID);
-				$("#19").find("option[text='"+data.workAge+"']").attr("selected",true);
-				$("#20").find("option[text='"+data.isPartimeL+"']").attr("selected",true);
+				if(data.typeOfcertificate)$("#15").find("option[text='"+data.typeOfcertificate+"']").attr("selected",true);
+				$("#16").val(data.ID);
+				if(data.academi)$("#17").find("option[text='"+data.academic+"']").attr("selected",true);
+				$("#18").val(data.aID);
+				if(data.workAge)$("#19").find("option[text='"+data.workAge+"']").attr("selected",true);
+				if(data.isPartimeL)$("#20").find("option[text='"+data.isPartimeL+"']").attr("selected",true);
 				$("#21").val(data.E_mail);
 				$("#22").val(data.homePhone);
 				$("#23").val(data.worklPlace);
@@ -271,6 +358,12 @@ function getBasicInfo(){
 				$("#42").val(data.advantage);
 				$("#43").val(data.achivement);
 				$("#47").val(data.others);
+				if(data.isCommit){
+					$("#btn1").attr("onclick","un2();");
+				}
+				else{
+					$("#btn1").attr("onclick","un1();");
+				}
 			}
 	});
 
@@ -412,5 +505,24 @@ function selectImg(){
 	document.getElementById("form").submit();
 }
  
+
+function checkEmail(){
+	var regex = /^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/g;
+        if ( !regex.test( $("#21").val())){
+			alert("非法邮箱");
+		}	
+}
+
+function checkphone(){
+	if($("#13").val().length != 11){
+		alert("请输入正确手机号码");
+	}
+}
+
+function checkid(){
+	if($("#16").val().length != 18){
+		alert("请输入正确身份证号");
+	}
+}
 
 

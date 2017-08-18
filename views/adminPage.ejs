@@ -128,7 +128,7 @@
             <div class = "ExpertNo">
                 <label style="background-color:gray;width:200px;height:30px;border:1px solid black;text-align:center">专家编号</label>
                 <% for(var i=0;i < user.length;i++) { %>
-                    <a href='http://localhost:3000/Admin/expert?<%= user[i].userName%>' target='_blank'>
+                    <a href='http://localhost:3000/Admin/expert?name=<%= user[i].userName%>' target='_blank'>
                         <%= user[i].CID %></a>
                 <% } %>
             </div>
